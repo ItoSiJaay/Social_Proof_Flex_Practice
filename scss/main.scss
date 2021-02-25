@@ -1,0 +1,198 @@
+@import url('https://fonts.google.com/specimen/Spartan');
+// Variables
+$dark-magenta:hsl(300, 43%, 22%);
+$soft-pink:hsl(333, 80%, 67%);
+$dark-gray-magenta:hsl(303, 10%, 53%);
+$light-gray-magenta:hsl(300, 24%, 96%);
+
+body{
+   padding:5rem;
+   margin:0;
+   font-size:15px;
+   font-family: 'Spartan', sans-serif;
+   // color:hsl(0, 0%, 100%);
+   background: url(../images/bg-pattern-top-desktop.svg) no-repeat -550px -100px, url(../images/bg-pattern-bottom-desktop.svg) no-repeat 100px 100px;
+   background-size: 100%;
+}
+
+.container{
+   width:100%;
+   box-sizing: border-box;
+   padding:1rem;
+}
+
+.attribution {
+   font-size: 11px;
+   text-align: center;
+ }
+ .attribution a {
+   color: hsl(228, 45%, 44%);
+ }
+
+
+// Section Styles
+#section{
+   // Section-A
+   &-a{
+      display: flex;
+      justify-content: space-evenly;
+      color:$dark-magenta;
+      .card-1{
+         width:450px;
+         height: 300px;
+         h1{
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin:0;
+         }
+         p{
+            color: $dark-gray-magenta;
+            font-weight: bolder;
+         }
+         .rating-stars{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 1rem;
+            text-align: center;
+            padding: .5rem;
+            border-radius: 10px;
+            background: #f4f4f4;
+            max-width: 350px;
+            box-shadow: 5px 5px 7px -6px #000000;
+            img{
+               width:15px;
+               height:15px;
+               padding:0 2px;
+            }
+            p{
+               color: $dark-magenta;
+               padding-left: 10px;
+               font-weight: bold;
+            }
+         }
+         .stars-2{
+            margin-left: 30px;
+         }
+         .stars-3{
+            margin-left: 55px;
+         }
+      }
+   }
+   // Section-B
+   &-b{
+      display: flex;
+      justify-content: center;
+
+      .testimonials{
+         color:$light-gray-magenta;
+         width:300px;
+         height:auto;
+         background: $dark-magenta;
+         padding: 1rem;
+         margin:.5rem;
+         border-radius: 10px;
+         box-shadow: 5px 5px 7px -6px #000000;
+
+         &:hover{
+            transform: scale(1.1);
+            transition: all ease-out 200ms;
+            cursor: pointer;
+            
+         }
+
+         .card-name{
+            display: flex;
+            align-items: center;
+
+            div{
+               padding-left: 1rem;
+
+               p{
+                  color: $dark-gray-magenta;
+                  font-weight: 100;
+               }
+            }
+         }
+         img{
+            border-radius:50%;
+            border:3px solid $dark-gray-magenta;
+         }
+      }
+   }
+}
+
+// Styles: 860px
+@media(max-width:860px){
+   #section{
+      &-a{
+         .card-1{
+            .rating-stars{
+               padding:.3rem;
+            }
+            h1{
+               font-size:2rem;
+            }
+         }
+      }
+   }
+}
+
+// Tablet Styles
+@media (max-width:768px){
+   body{
+      padding:2rem;
+   }
+   #section{  
+      &-a{
+         flex-direction: column;
+         width: auto;
+         height: auto;
+         .card-1{
+            width:auto;
+            height: auto;
+            padding:1rem;
+
+            .rating-stars{
+               max-width: 85%;
+               margin:1rem auto;
+               justify-content: center;
+            }
+         }
+         
+      }
+
+      &-b{
+         flex-direction: column;
+         .testimonials{
+            width: 90%;
+            padding:1.5rem
+         }
+      }
+   }
+}
+
+// Mobile Styles
+@media (max-width:426px){
+   body{
+      padding: .5rem;
+      background: url(../images/bg-pattern-top-mobile.svg) no-repeat top left,url(../images/bg-pattern-bottom-mobile) no-repeat bottom right;
+   }
+
+   #section{
+      
+      &-a{
+         text-align: center;
+         .card-1{
+            width: auto;
+         }
+      }
+      &-b{
+
+         .testimonials{
+            width: 85%;
+            padding:1rem;
+         }
+      }
+   }
+}
